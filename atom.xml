@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-23T09:51:23.604Z</updated>
+  <updated>2020-07-23T10:30:17.117Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,49 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2020/07/23/test/"/>
-    <id>http://yoursite.com/2020/07/23/test/</id>
-    <published>2020-07-23T09:47:09.000Z</published>
-    <updated>2020-07-23T09:51:23.604Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>title: 你的题目<br>tags: 你的标签<br>category: 你的分类</p><hr>]]></content>
+    <title>并发-ThreadLocal探究</title>
+    <link href="http://yoursite.com/2020/07/23/%E5%B9%B6%E5%8F%91-ThreadLocal%E6%8E%A2%E7%A9%B6/"/>
+    <id>http://yoursite.com/2020/07/23/%E5%B9%B6%E5%8F%91-ThreadLocal%E6%8E%A2%E7%A9%B6/</id>
+    <published>2020-07-23T10:29:00.000Z</published>
+    <updated>2020-07-23T10:30:17.117Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;p&gt;title: 你的题目&lt;br&gt;tags: 你的标签&lt;br&gt;category: 你的分类&lt;/p&gt;
-&lt;hr&gt;
-
-      
     
     </summary>
     
     
+      <category term="并发" scheme="http://yoursite.com/categories/%E5%B9%B6%E5%8F%91/"/>
+    
+    
+      <category term="ThreadLocal" scheme="http://yoursite.com/tags/ThreadLocal/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/07/22/hello-world/"/>
-    <id>http://yoursite.com/2020/07/22/hello-world/</id>
-    <published>2020-07-22T05:47:41.148Z</published>
-    <updated>2020-07-22T05:47:41.148Z</updated>
+    <title>并发-死锁探究</title>
+    <link href="http://yoursite.com/2020/07/23/%E5%B9%B6%E5%8F%91-%E6%AD%BB%E9%94%81%E6%8E%A2%E7%A9%B6/"/>
+    <id>http://yoursite.com/2020/07/23/%E5%B9%B6%E5%8F%91-%E6%AD%BB%E9%94%81%E6%8E%A2%E7%A9%B6/</id>
+    <published>2020-07-23T10:09:00.000Z</published>
+    <updated>2020-07-23T10:28:31.567Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、死锁的产生"><a href="#一、死锁的产生" class="headerlink" title="一、死锁的产生"></a>一、死锁的产生</h1><p>Java 的 I/O 大概可以分成以下几类：</p><ul><li>磁盘操作：File</li><li>字节操作：InputStream 和 OutputStream</li><li>字符操作：Reader 和 Writer</li><li>对象操作：Serializable</li><li>网络操作：Socket</li><li>新的输入/输出：NIO</li></ul><h1 id="二、发生死锁的必要条件"><a href="#二、发生死锁的必要条件" class="headerlink" title="二、发生死锁的必要条件"></a>二、发生死锁的必要条件</h1><p>File 类可以用于表示文件和目录的信息，但是它不表示文件的内容。</p><p>递归地输出一个目录下所有文件：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">listAllFiles</span><span class="params">(File dir)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (dir == <span class="keyword">null</span> || !dir.exists()) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dir.isFile()) &#123;</span><br><span class="line">        System.out.println(dir.getName());</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (File file : Objects.requireNonNull(dir.listFiles())) &#123;</span><br><span class="line">        listAllFiles(file);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="三、解决与修正"><a href="#三、解决与修正" class="headerlink" title="三、解决与修正"></a>三、解决与修正</h1>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h1 id=&quot;一、死锁的产生&quot;&gt;&lt;a href=&quot;#一、死锁的产生&quot; class=&quot;headerlink&quot; title=&quot;一、死锁的产生&quot;&gt;&lt;/a&gt;一、死锁的产生&lt;/h1&gt;&lt;p&gt;Java 的 I/O 大概可以分成以下几类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁盘操作：File&lt;/li&gt;
       
     
     </summary>
     
     
+      <category term="并发" scheme="http://yoursite.com/categories/%E5%B9%B6%E5%8F%91/"/>
+    
+    
+      <category term="死锁" scheme="http://yoursite.com/tags/%E6%AD%BB%E9%94%81/"/>
     
   </entry>
   
