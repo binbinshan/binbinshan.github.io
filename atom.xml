@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-22T10:47:01.404Z</updated>
+  <updated>2020-07-23T09:51:23.604Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,24 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>one</title>
-    <link href="http://yoursite.com/2020/07/22/one/"/>
-    <id>http://yoursite.com/2020/07/22/one/</id>
-    <published>2020-07-22T10:16:00.000Z</published>
-    <updated>2020-07-22T10:47:01.404Z</updated>
+    <title>test</title>
+    <link href="http://yoursite.com/2020/07/23/test/"/>
+    <id>http://yoursite.com/2020/07/23/test/</id>
+    <published>2020-07-23T09:47:09.000Z</published>
+    <updated>2020-07-23T09:51:23.604Z</updated>
     
-    <content type="html"><![CDATA[<p>title: PHP基础第一章<br>tags:</p><ul><li>PHP<br>date: 2016-11-14</li></ul><hr><p>111</p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: 你的题目<br>tags: 你的标签<br>category: 你的分类</p><hr>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;title: PHP基础第一章&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PHP&lt;br&gt;date: 2016-11-14&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;hr&gt;
+&lt;p&gt;title: 你的题目&lt;br&gt;tags: 你的标签&lt;br&gt;category: 你的分类&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;111&lt;/p&gt;
 
       
     
